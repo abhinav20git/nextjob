@@ -4,7 +4,9 @@ const Job = require('./models/Job');
 const cors = require('cors');
 require('dotenv').config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:process.env.VITE_FRONTEND_URL,
+}));
 
 // mongoose.connect(process.env.DATABASE_URL, {
 //   useNewUrlParser: true,
