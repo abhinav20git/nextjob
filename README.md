@@ -2,6 +2,9 @@
 
 A full-stack Job Listing Portal built using **React**, **Node.js**, **Express**, and **MongoDB**, allowing users to explore jobs with filtering support based on location and more. Backend handles filtering efficiently to support scalability and performance.
 
+<img width="941" alt="image" src="https://github.com/user-attachments/assets/fe1657b1-8037-4fc4-8a1d-89a18cd3ecbb" />
+
+
 ## 🚀 Features
 
 - 📄 View job listings with detailed descriptions
