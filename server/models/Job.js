@@ -1,7 +1,8 @@
+// models/Job.js
 const mongoose = require('mongoose');
 
-const JobSchema = new mongoose.Schema({
-  jobId: { type: Number, required: true, unique: true },
+const jobSchema = new mongoose.Schema({
+  jobId: Number,
   title: String,
   company: String,
   location: String,
@@ -10,12 +11,10 @@ const JobSchema = new mongoose.Schema({
   experience: String,
   source: String,
   country: String,
-  postedDateTime: {
-    $date: { type: Date }
-  },
+  postedDateTime: Date,
   companyImageUrl: String,
   min_exp: Number,
   max_exp: Number
 });
 
-module.exports = mongoose.model('Job', JobSchema);
+module.exports = mongoose.model('Job', jobSchema);

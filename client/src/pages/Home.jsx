@@ -3,20 +3,19 @@ import JobDetails from '../components/JobDetails';
 import JobList from '../components/JobList';
 import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
+import { fetchJobs } from '../utils/api';
 export default function App() {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-    fetch('/jobdata.json')
-      .then(res => res.json())
-      .then(data => {
-        setJobs(data);
-        setSelectedJob(data[0]);
-      })
-      .catch(err => console.error('Failed to load job data:', err));
-  }, []);
+    const loadJobs = async () => {
+      const result = await fetchJobs(location); // searchLocation is user input
+      setJobs(result);
+    };
+    loadJobs();
+  }, [location]);
 
   const filteredJobs = location
     ? jobs.filter((job) =>
